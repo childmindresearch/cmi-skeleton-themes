@@ -1,0 +1,23 @@
+{
+  "name": "cmi-skeleton-themes",
+  "version": "0.0.1",
+  "description": "A collection of SkeletonUI themes for CMI.",
+  "main": "src/index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "skeleton",
+    "theme",
+    "child",
+    "mind",
+    "institute"
+  ],
+  "author": "Child Mind Institute",
+  "license": "LGPL-2.1-only",
+  "devDependencies": {
+    "@skeletonlabs/tw-plugin": "^0.3.1",
+    "tsup": "^8.0.2",
+    "typescript": "^5.3.3"
+  }
+}
