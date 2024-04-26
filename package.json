@@ -1,6 +1,6 @@
 {
   "name": "@cmi-dair/skeleton-themes",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A collection of SkeletonUI themes for CMI.",
   "main": "src/index.ts",
   "scripts": {
