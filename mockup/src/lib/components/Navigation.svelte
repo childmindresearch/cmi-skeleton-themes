@@ -6,6 +6,7 @@
 	const pages = [
 		{ name: 'Buttons', href: '/buttons' },
 		{ name: 'Slide Toggle', href: '/slidetoggle' },
+		{ name: 'Tab Group', href: '/tabgroup' },
 		{ name: 'Table', href: '/table' }
 	];
 
