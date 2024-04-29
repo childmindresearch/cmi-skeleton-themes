@@ -4,10 +4,16 @@
 
 	const drawerStore = getDrawerStore();
 	const pages = [
+		{ name: 'Alerts', href: '/alerts' },
+		{ name: 'Autocomplete', href: '/autocomplete' },
 		{ name: 'Buttons', href: '/buttons' },
+		{ name: 'Lists', href: '/lists' },
+		{ name: 'Radio Groups', href: '/radiogroups' },
 		{ name: 'Slide Toggle', href: '/slidetoggle' },
 		{ name: 'Tab Group', href: '/tabgroup' },
-		{ name: 'Table', href: '/table' }
+		{ name: 'Table', href: '/table' },
+		{ name: 'Tree Views', href: '/treeviews' },
+		{ name: 'Typography', href: '/typography' }
 	];
 
 	function drawerClose(): void {

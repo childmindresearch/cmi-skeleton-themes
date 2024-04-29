@@ -1,5 +1,5 @@
 <script lang="ts">
-	import ThumbsUp from './ThumbsUp.svelte';
+	import ThumbsUp from '../../lib/ThumbsUp.svelte';
 </script>
 
 <button type="button" class="btn-icon variant-soft-primary"><ThumbsUp /></button>
