@@ -12,6 +12,7 @@
 		{ name: 'Slide Toggle', href: '/slidetoggle' },
 		{ name: 'Tab Group', href: '/tabgroup' },
 		{ name: 'Table', href: '/table' },
+		{ name: 'Toasts', href: '/toasts' },
 		{ name: 'Tree Views', href: '/treeviews' },
 		{ name: 'Typography', href: '/typography' }
 	];
