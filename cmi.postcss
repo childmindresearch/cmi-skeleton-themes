@@ -23,14 +23,19 @@ hr {
 /*form elements*/
 
 .slide-toggle-track {
-	@apply bg-neutral-400 dark:bg-neutral-800 !important;
-}
-input[type=checkbox]:checked + .slide-toggle-track {
 	@apply bg-neutral-200 dark:bg-neutral-600 !important;
 }
 
+input[type=checkbox]:checked + .slide-toggle-track {
+	@apply bg-neutral-300 dark:bg-neutral-800 !important;
+}
+
 .slide-toggle-thumb {
-	@apply bg-neutral-600 dark:bg-neutral-300 !important;
+	@apply bg-neutral-400 dark:bg-neutral-300 !important;
+}
+
+input[type=checkbox]:checked + .slide-toggle-track > .slide-toggle-thumb {
+	@apply bg-neutral-500 dark:bg-neutral-400 !important;
 }
 
 .select,
