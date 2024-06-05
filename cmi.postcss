@@ -1,3 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@tailwind variants;
+
 /*layout elements*/
 
 .app-bar {
@@ -5,15 +10,15 @@
 }
 
 .tab-list {
-	@apply border-b border-neutral-400 !important;
+	@apply border-b border-neutral-400;
 }
 
 .tab-list .border-b-2 {
-	@apply border-b border-neutral-400 !important;
+	@apply border-b border-neutral-400;
 }
 
 .lightswitch-track {
-	@apply ring-surface-700 bg-surface-400 dark:bg-surface-900 !important;
+	@apply ring-surface-700 bg-surface-400 dark:bg-surface-900;
 }
 
 hr {
@@ -23,19 +28,19 @@ hr {
 /*form elements*/
 
 .slide-toggle-track {
-	@apply bg-neutral-200 dark:bg-neutral-600 !important;
+	@apply bg-neutral-200 dark:bg-neutral-600;
 }
 
 input[type=checkbox]:checked + .slide-toggle-track {
-	@apply bg-neutral-300 dark:bg-neutral-800 !important;
+	@apply bg-neutral-300 dark:bg-neutral-800;
 }
 
 .slide-toggle-thumb {
-	@apply bg-neutral-400 dark:bg-neutral-300 !important;
+	@apply bg-neutral-400 dark:bg-neutral-300;
 }
 
 input[type=checkbox]:checked + .slide-toggle-track > .slide-toggle-thumb {
-	@apply bg-neutral-500 dark:bg-neutral-400 !important;
+	@apply bg-neutral-500 dark:bg-neutral-400;
 }
 
 .select,
@@ -44,6 +49,6 @@ input[type=checkbox]:checked + .slide-toggle-track > .slide-toggle-thumb {
 }
 
 input[type='file'] {
-	@apply border-none file:variant-soft-primary hover:file:variant-filled-primary !important;
+	@apply border-none file:variant-soft-primary hover:file:variant-filled-primary;
 }
 
