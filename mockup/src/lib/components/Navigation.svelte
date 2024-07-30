@@ -8,6 +8,7 @@
 		{ name: 'Autocomplete', href: '/autocomplete' },
 		{ name: 'Buttons', href: '/buttons' },
 		{ name: 'Hr', href: '/hr' },
+		{ name: 'Input', href: '/input' },
 		{ name: 'Lists', href: '/lists' },
 		{ name: 'Radio Groups', href: '/radiogroups' },
 		{ name: 'Slide Toggle', href: '/slidetoggle' },
