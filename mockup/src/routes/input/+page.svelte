@@ -52,3 +52,8 @@
 	<span>Select value</span>
 	<input type="range" placeholder="Select value" class="input" />
 </label>
+
+<label>
+	<span>Checkbox</span>
+	<input type="checkbox" class="checkbox" />
+</label>
