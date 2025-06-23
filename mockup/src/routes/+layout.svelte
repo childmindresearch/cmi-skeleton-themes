@@ -1,54 +1,26 @@
 <script lang="ts">
 	import NavBar from '$lib/components/NavBar.svelte';
 	import Navigation from '$lib/components/Navigation.svelte';
-	import '@cmi-dair/skeleton-themes/cmi.postcss';
-	import { arrow, autoUpdate, computePosition, flip, offset, shift } from '@floating-ui/dom';
-	import {
-		AppShell,
-		Drawer,
-		Toast,
-		initializeStores,
-		storeHighlightJs,
-		storePopup
-	} from '@skeletonlabs/skeleton';
-	import hljs from 'highlight.js/lib/core';
-	import css from 'highlight.js/lib/languages/css';
-	import javascript from 'highlight.js/lib/languages/javascript';
-	import typescript from 'highlight.js/lib/languages/typescript';
-	import xml from 'highlight.js/lib/languages/xml';
-	import 'highlight.js/styles/github-dark.css';
+	import { Toaster } from '@skeletonlabs/skeleton-svelte';
+	import { toaster } from '$lib/toast';
+	import '../app.css';
 
-	hljs.registerLanguage('xml', xml); // for HTML
-	hljs.registerLanguage('css', css);
-	hljs.registerLanguage('javascript', javascript);
-	hljs.registerLanguage('typescript', typescript);
-	storeHighlightJs.set(hljs);
-
-	// Floating UI for Popups
-	storePopup.set({ computePosition, autoUpdate, flip, shift, offset, arrow });
-
-	initializeStores();
+	let { children } = $props();
 </script>
 
 <svelte:head>
 	<title>Skeleton Theme Mock-Up</title>
 </svelte:head>
 
-<Toast />
-<Drawer width="w-64">
-	<h2 class="p-4 h2">Navigation</h2>
-	<hr />
-	<Navigation />
-</Drawer>
+<Toaster {toaster}></Toaster>
+<header><NavBar /></header>
 
-<AppShell slotSidebarLeft="bg-surface-500/5 w-0 md:w-64">
-	<svelte:fragment slot="header">
-		<NavBar />
-	</svelte:fragment>
-	<svelte:fragment slot="sidebarLeft">
+<div class="flex h-screen">
+	<div class="hidden md:block md:w-64 h-full z-10 flex-shrink-0">
 		<Navigation />
-	</svelte:fragment>
-	<div class="max-w-screen-md mx-auto mt-5 px-5 min-w-[332px]">
-		<slot />
 	</div>
-</AppShell>
+
+	<div class="overflow-y-hidden px-10 pt-5 flex-1">
+		{@render children()}
+	</div>
+</div>

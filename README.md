@@ -10,28 +10,16 @@ To install this theme, run the following command:
 npm install @cmi-dair/skeleton-themes
 ```
 
-In your `tailwind.config.ts` file, add the custom theme as follows:
+In your `./src/app.css` file, add the following line at the end of the file:
 
-```typescript
-import { cmiLight } from '@cmi-dair/skeleton-themes'
-
-export default {
-    ...,
-    plugins: [
-        skeleton({
-            themes: {
-                custom: [cmiLight]
-            }
-        })
-    ]
-} satisfies Config;
-
+```css
+@import '@cmi-dair/skeleton-themes/cmi-light.css';
 ```
 
-Next, in your root `+layout.svelte` add the following:
+Ensure that you import this css in your base `+layout.svelte`:
 
 ```svelte
 <script>
-    import '@cmi-dair/skeleton-themes/cmi.postcss';
+    import '../app.css';
 </script>
 ```
