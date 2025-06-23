@@ -1,40 +1,18 @@
 <script lang="ts">
-	import { getToastStore, type ToastSettings } from '@skeletonlabs/skeleton';
+	import { toaster } from '$lib/toast';
 
-	const toastStore = getToastStore();
-
-	const basicToast: ToastSettings = {
-		message: 'Lorem ipsum dolor sit amet consectetur adipisicing elit...'
-	};
-
-	const actionToast: ToastSettings = {
-		message: 'Lorem ipsum dolor sit amet consectetur adipisicing elit...',
-		action: {
-			label: 'Greeting',
-			response: () => console.log('Hello, Skeleton')
-		}
-	};
+	const toastMessage = { title: 'Title', description: 'This is a description.' };
 </script>
 
-<button class="btn variant-filled-primary" on:click={() => toastStore.trigger(basicToast)}
-	>Basic Toast</button
+<button class="btn preset-filled-primary-500" on:click={() => toaster.info(toastMessage)}
+	>Info Toast</button
 >
-<button class="btn variant-filled-primary" on:click={() => toastStore.trigger(actionToast)}
-	>Action Toast</button
->
-
-<button
-	class="btn variant-filled-success"
-	on:click={() => toastStore.trigger({ ...basicToast, background: 'variant-filled-success' })}
+<button class="btn preset-filled-success-500" on:click={() => toaster.success(toastMessage)}
 	>Success Toast</button
 >
-<button
-	class="btn variant-filled-warning"
-	on:click={() => toastStore.trigger({ ...basicToast, background: 'variant-filled-warning' })}
+<button class="btn preset-filled-warning-500" on:click={() => toaster.warning(toastMessage)}
 	>Warning Toast</button
 >
-<button
-	class="btn variant-filled-error"
-	on:click={() => toastStore.trigger({ ...basicToast, background: 'variant-filled-error' })}
+<button class="btn preset-filled-error-500" on:click={() => toaster.error(toastMessage)}
 	>Error Toast</button
 >

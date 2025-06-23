@@ -1,5 +1,3 @@
-import { cmiLight } from '@cmi-dair/skeleton-themes';
-import { skeleton } from '@skeletonlabs/tw-plugin';
 import forms from '@tailwindcss/forms';
 import typography from '@tailwindcss/typography';
 import { join } from 'path';
@@ -14,13 +12,5 @@ export default {
 	theme: {
 		extend: {}
 	},
-	plugins: [
-		forms,
-		typography,
-		skeleton({
-			themes: {
-				custom: [cmiLight]
-			}
-		})
-	]
+	plugins: [forms, typography]
 } satisfies Config;

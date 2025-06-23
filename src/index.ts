@@ -1,1 +1,0 @@
-export { cmiLight } from "./themes";

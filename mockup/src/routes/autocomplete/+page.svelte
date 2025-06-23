@@ -1,24 +1,26 @@
 <script lang="ts">
-	import { Autocomplete, type AutocompleteOption } from '@skeletonlabs/skeleton';
+	import { Combobox } from '@skeletonlabs/skeleton-svelte';
 
-	let inputDemo = '';
-
-	const flavorOptions: AutocompleteOption<string>[] = [
-		{ label: 'Vanilla', value: 'vanilla', keywords: 'plain, basic', meta: { healthy: false } },
-		{ label: 'Chocolate', value: 'chocolate', keywords: 'dark, white', meta: { healthy: false } },
-		{ label: 'Strawberry', value: 'strawberry', keywords: 'fruit', meta: { healthy: true } },
-		{ label: 'Pineapple', value: 'pineapple', keywords: 'fruit', meta: { healthy: true } },
-		{ label: 'Peach', value: 'peach', keywords: 'fruit', meta: { healthy: true } }
-	];
-
-	function onFlavorSelection(event: CustomEvent<AutocompleteOption<string>>): void {
-		inputDemo = event.detail.label;
+	interface ComboboxData {
+		label: string;
+		value: string;
 	}
+
+	let selectedFlavor: string[] = $state([]);
+
+	const comboboxData: ComboboxData[] = [
+		{ label: 'Vanilla', value: 'vanilla' },
+		{ label: 'Chocolate', value: 'chocolate' },
+		{ label: 'Strawberry', value: 'strawberry' },
+		{ label: 'Pineapple', value: 'pineapple' },
+		{ label: 'Peach', value: 'peach' }
+	];
 </script>
 
-<div class="max-w-sm">
-	<input class="input" type="search" name="demo" bind:value={inputDemo} placeholder="Search..." />
-	<div class="card w-full max-w-sm max-h-48 p-4 overflow-y-auto" tabindex="-1">
-		<Autocomplete bind:input={inputDemo} options={flavorOptions} on:selection={onFlavorSelection} />
-	</div>
-</div>
+<Combobox
+	data={comboboxData}
+	value={selectedFlavor}
+	onValueChange={(e) => (selectedFlavor = e.value)}
+	label="Select Flavor"
+	placeholder="Select..."
+></Combobox>

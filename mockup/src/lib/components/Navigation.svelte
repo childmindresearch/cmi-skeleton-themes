@@ -1,40 +1,33 @@
 <script lang="ts">
-	import { page } from '$app/stores';
-	import { getDrawerStore } from '@skeletonlabs/skeleton';
+	import { Navigation } from '@skeletonlabs/skeleton-svelte';
+	import { page } from '$app/state';
 
-	const drawerStore = getDrawerStore();
+	let isExpanded = $state(true);
+
 	const pages = [
-		{ name: 'Alerts', href: '/alerts' },
 		{ name: 'Autocomplete', href: '/autocomplete' },
 		{ name: 'Buttons', href: '/buttons' },
 		{ name: 'Hr', href: '/hr' },
 		{ name: 'Input', href: '/input' },
-		{ name: 'Lists', href: '/lists' },
-		{ name: 'Radio Groups', href: '/radiogroups' },
-		{ name: 'Slide Toggle', href: '/slidetoggle' },
+		{ name: 'Segment', href: '/segment' },
+		{ name: 'Switch', href: '/switch' },
 		{ name: 'Tab Group', href: '/tabgroup' },
 		{ name: 'Table', href: '/table' },
 		{ name: 'Toasts', href: '/toasts' },
-		{ name: 'Tree Views', href: '/treeviews' },
 		{ name: 'Typography', href: '/typography' }
 	];
-
-	function drawerClose(): void {
-		drawerStore.close();
-	}
-
-	$: classesActive = (href: string) =>
-		href === $page.url.pathname ? 'bg-primary-100 dark:bg-primary-700' : '';
 </script>
 
-<nav class="list-nav p-4 flex flex-col" data-testid="div-navigation">
-	<ul style="flex-grow: 1;">
-		{#each pages as { name, href }}
-			<li>
-				<a {href} class={classesActive(href)} data-testid="a-navigation" on:click={drawerClose}
-					>{name}</a
-				>
-			</li>
-		{/each}
-	</ul>
-</nav>
+<div
+	class="bg-surface-50 border-surface-50 grid h-full w-full grid-cols-[auto_1fr] border-[1px] card"
+>
+	<Navigation.Rail expanded={isExpanded} background="bg-surface-50" tilesJustify="justify-start">
+		{#snippet tiles()}
+			{#each pages as { name, href }}
+				<Navigation.Tile {href} selected={page.url.pathname === href}>
+					{name}
+				</Navigation.Tile>
+			{/each}
+		{/snippet}
+	</Navigation.Rail>
+</div>
